@@ -43,13 +43,9 @@ COPY jupyter_notebook_config.py /root/.jupyter/
 # Copy sample notebooks.
 COPY notebooks /notebooks
 
-#COPY run_jupyter.sh /
-#RUN chmod +x /run_jupyter.sh
-
 # TensorBoard & Jupyter
 EXPOSE 6006 8888
 
 WORKDIR "/notebooks"
 
-#CMD ["/run_jupyter.sh", "--allow-root"]
 CMD jupyter lab --ip=* --no-browser --allow-root
