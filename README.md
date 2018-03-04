@@ -9,7 +9,7 @@ There image is a copy on another image based on Python 2.7 [elswork/rpi-tensorfl
 
 You will see some warning messages when executing commands in jupyter notebooks this is caused because tensorflow wheel package is built for Python 3.4 and the Python version of container is 3.5, but despite this commands will work as expected.
 
-Most tags of this container should work under armv7 (raspberry, odroid, ...), there are also images for arm64.
+Most tags of this container should work under armv7 (raspberry, odroid, ...).
 
 # Details
 
