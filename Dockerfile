@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
      matplotlib \
      numpy \
      sklearn \
-     pandas \     
+     pandas \
      && \
      python3 -m ipykernel.kernelspec
 
