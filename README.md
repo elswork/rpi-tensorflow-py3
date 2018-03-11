@@ -5,39 +5,62 @@ There image is a copy on another image based on Python 2.7 [elswork/rpi-tensorfl
 
 > Be aware! This image is experimental, you should use the other one unless the use of Python 3 would be indispensable!
 
-# Considerations
+## Considerations
 
 You will see some warning messages when executing commands in jupyter notebooks this is caused because tensorflow wheel package is built for Python 3.4 and the Python version of container is 3.5, but despite this commands will work as expected.
 
-Most tags of this container should work under armv7 (raspberry, odroid, ...).
+Most tags of this container should work under arm32v7 (raspberry, odroid, ...), amd64 tag is for x86 (most computers)
 
-# Details
+## Details
 
+- [GitHub](https://github.com/DeftWork/rpi-tensorflow-py3)
 - [Docker Hub](https://hub.docker.com/r/elswork/rpi-tensorflow-py3/)
 - [Deft.Work my personal blog](http://deft.work/tensorflow_for_raspberry)
 
-# My Real Usage Example
+## Build Instructions
+
+Build for arm32v7 architecture
+
+```sh
+docker build -t elswork/rpi-tensorflow-py3:latest .
+```
+
+Build for amd64 architecture
+
+```sh
+docker build -t elswork/rpi-tensorflow-py3:latest \
+ --build-arg WHL_URL=https://storage.googleapis.com/tensorflow/linux/cpu/ \
+ --build-arg WHL_FILE=tensorflow-1.6.0-cp34-cp34m-linux_x86_64.whl .
+```
+
+## My Real Usage Example
 
 In order everyone could take full advantages of the usage of this docker container, I'll describe my own real usage setup.
+For amd64 architecture replace latest by amd64 tag.
+
 ```sh
-$ docker run -d -p 8888:8888 elswork/rpi-tensorflow-py3:latest
+docker run -d -p 8888:8888 elswork/rpi-tensorflow-py3:latest
 ```
+
 A more complex sample:
+
 ```sh
-$ docker run -d -p 8888:8888 -p 0.0.0.0:6006:6006 \
---restart=unless-stopped  elswork/rpi-tensorflow-py3:latest
+docker run -d -p 8888:8888 -p 0.0.0.0:6006:6006 \
+ --restart=unless-stopped elswork/rpi-tensorflow-py3:latest
 ```
+
 Point your browser to `http://localhost:8888`
 
 First time you open it, you should provide a Token to log on you cand find it with this command:
 
 ```sh
-$ docker logs container_name
+docker logs container_name
 ```
 
 With the second example you can run TensorBoard executing this command in the container:
 
 ```sh
-$ tensorboard --logdir=path/to/log-directory --host=0.0.0.0
+tensorboard --logdir=path/to/log-directory --host=0.0.0.0
 ```
+
 And pointing your browser to `http://localhost:6006`
