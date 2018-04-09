@@ -34,7 +34,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
      python3 -m ipykernel.kernelspec
 
 ARG WHL_URL=http://ci.tensorflow.org/view/Nightly/job/nightly-pi-python3/lastSuccessfulBuild/artifact/output-artifacts/
-ARG WHL_FILE=tensorflow-1.7.0rc1-cp34-none-any.whl	
+ARG WHL_FILE=tensorflow-1.7.0-cp34-none-any.whl	
 
 RUN curl -O ${WHL_URL}${WHL_FILE} && \
 mv ${WHL_FILE} tensorflow-1.7.0-py3-none-any.whl && \

@@ -1,4 +1,4 @@
-Sending build context to Docker daemon 717.8 kB
+Sending build context to Docker daemon 734.7 kB
 Step 1/12 : FROM ubuntu:16.04
  ---> e6bce28de62e
 Step 2/12 : LABEL mantainer "Eloy Lopez <elswork@gmail.com>"
@@ -11,54 +11,55 @@ Step 4/12 : RUN pip3 install --upgrade pip &&   pip3 --no-cache-dir install     
  ---> Using cache
  ---> 12816135a882
 Step 5/12 : ARG WHL_URL=http://ci.tensorflow.org/view/Nightly/job/nightly-pi-python3/lastSuccessfulBuild/artifact/output-artifacts/
- ---> Running in 28dea0674eab
+ ---> Using cache
  ---> aec12ecb9bff
-Removing intermediate container 28dea0674eab
-Step 6/12 : ARG WHL_FILE=tensorflow-1.7.0rc1-cp34-none-any.whl
- ---> Running in 4edf6f441847
- ---> e81ad40cc908
-Removing intermediate container 4edf6f441847
-Step 7/12 : RUN curl -O ${WHL_URL}${WHL_FILE} && mv ${WHL_FILE} tensorflow-1.7.0rc1-py3-none-any.whl && pip3 --no-cache-dir install tensorflow-1.7.0rc1-py3-none-any.whl && rm -f tensorflow-1.7.0rc1-py3-none-any.whl
- ---> Running in d19e98a63d6a
-[91m  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m  0 59.8M    0 27352    0     0  62827      0  0:16:38 --:--:--  0:16:38 62878[0m[91m  5 59.8M    5 3407k    0     0  2409k      0  0:00:25  0:00:01  0:00:24 2410k[0m[91m 18 59.8M   18 10.9M    0     0  4675k[0m[91m      0  0:00[0m[91m:13  0:00:02  0:00:11 4[0m[91m677k[0m[91m 29 59.8M   29 17.4M    0     0  5308k      0  0:00:11  0:00:03  0:[0m[91m00:08 5309k[0m[91m 40 59.8M   40 24.4M    0     0  5768k      0  0:00:10  0:0[0m[91m0:04  0:00:0[0m[91m6 5769k[0m[91m 53 59.8M   53 32.1M    0     0  6153k      0  0:00:09 [0m[91m 0:00:05  0:00:04 6692k[0m[91m 66 59.8M   66 39.6M    0     0  6373k      0  0:00:09  0:0[0m[91m0:06  0:00:03 7504k[0m[91m 78 59.8M   78 47.0M    0     0  6542k      0  0:00:09  0:00:07  0:00:02 7437k[0m[91m 91 59.8M   91 54.5M    0     0[0m[91m  6690k      0  0:00:09  0:00:[0m[91m08  0:00:01 7620k[0m[91m100 59.8M  100 5[0m[91m9.8M    0     0  6812k      0  0:00:08 [0m[91m 0:00:08 --:-[0m[91m-:-- 7789[0m[91mk
-[0mProcessing /tensorflow-1.7.0rc1-py3-none-any.whl
-Requirement already satisfied: six>=1.10.0 in /usr/local/lib/python3.5/dist-packages (from tensorflow==1.7.0rc1)
-Collecting tensorboard<1.7.0,>=1.6.0 (from tensorflow==1.7.0rc1)
-  Downloading tensorboard-1.6.0-py3-none-any.whl (3.0MB)
-Collecting astor>=0.6.0 (from tensorflow==1.7.0rc1)
-  Downloading astor-0.6.2-py2.py3-none-any.whl
-Collecting termcolor>=1.1.0 (from tensorflow==1.7.0rc1)
+Step 6/12 : ARG WHL_FILE=tensorflow-1.7.0-cp34-none-any.whl
+ ---> Running in 94582d10bc8c
+ ---> 0f2f437c4219
+Removing intermediate container 94582d10bc8c
+Step 7/12 : RUN curl -O ${WHL_URL}${WHL_FILE} && mv ${WHL_FILE} tensorflow-1.7.0-py3-none-any.whl && pip3 --no-cache-dir install tensorflow-1.7.0-py3-none-any.whl && rm -f tensorflow-1.7.0-py3-none-any.whl
+ ---> Running in 6e6028f296ea
+[91m  % [0m[91mTotal   [0m[91m % [0m[91mRe[0m[91mc[0m[91meived [0m[91m% Xf[0m[91me[0m[91mrd  A[0m[91mverage Sp[0m[91meed [0m[91m  Ti[0m[91mm[0m[91me [0m[91m   Time [0m[91m  [0m[91m  Time[0m[91m [0m[91m C[0m[91mu[0m[91mrr[0m[91me[0m[91mn[0m[91mt
+[0m[91m [0m[91m     [0m[91m [0m[91m  [0m[91m                        Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0[0m[91m  0[0m[91m 5[0m[91m8.[0m[91m6[0m[91mM[0m[91m [0m[91m [0m[91m [0m[91m [0m[91m0[0m[91m [0m[91m 4[0m[91m26k    0     0   440k      0  0:02:16 --:--:--  0:02:16  440k[0m[91m 16 58.6M   16 9919k    0     0  4963k      0  0:00:12  0:00:01  0:00:11 4962k[0m[91m 39 58.6[0m[91mM [0m[91m  3[0m[91m9 2[0m[91m3.0[0m[91mM [0m[91m [0m[91m  0[0m[91m [0m[91m  [0m[91m  [0m[91m0 [0m[91m 7[0m[91m96[0m[91m2[0m[91mk [0m[91m  [0m[91m  [0m[91m 0[0m[91m  [0m[91m0[0m[91m:0[0m[91m0:[0m[91m07[0m[91m  [0m[91m0:[0m[91m0[0m[91m0[0m[91m:0[0m[91m2  [0m[91m0:[0m[91m0[0m[91m0:[0m[91m05[0m[91m 79[0m[91m61[0m[91mk[0m[91m 63 58.[0m[91m6M [0m[91m [0m[91m 6[0m[91m3 [0m[91m37.2[0m[91mM [0m[91m   [0m[91m0  [0m[91m  [0m[91m 0  9621k [0m[91m     0[0m[91m  0[0m[91m:00:[0m[91m06  [0m[91m0:[0m[91m0[0m[91m0:03  0[0m[91m:0[0m[91m0:0[0m[91m3[0m[91m 9[0m[91m621k[0m[91m 87 5[0m[91m8.6M [0m[91m [0m[91m 87 [0m[91m51.4M [0m[91m  [0m[91m [0m[91m0     [0m[91m0  [0m[91m10.3M[0m[91m   [0m[91m  [0m[91m 0 [0m[91m [0m[91m0:[0m[91m00:[0m[91m05[0m[91m  0:00:04  0:00:01 10.[0m[91m3M[0m[91m10[0m[91m0[0m[91m 5[0m[91m8.6M [0m[91m 100[0m[91m 5[0m[91m8[0m[91m.6M  [0m[91m  0[0m[91m [0m[91m [0m[91m   0[0m[91m  [0m[91m10[0m[91m.9M[0m[91m  [0m[91m  [0m[91m  [0m[91m0  [0m[91m0[0m[91m:00[0m[91m:05[0m[91m  [0m[91m0:[0m[91m00[0m[91m:[0m[91m05 [0m[91m-[0m[91m-:-[0m[91m-[0m[91m:--[0m[91m 13[0m[91m.[0m[91m2M[0m[91m
+[0mProcessing /tensorflow-1.7.0-py3-none-any.whl
+Collecting absl-py>=0.1.6 (from tensorflow==1.7.0)
+  Downloading absl-py-0.1.13.tar.gz (80kB)
+Collecting termcolor>=1.1.0 (from tensorflow==1.7.0)
   Downloading termcolor-1.1.0.tar.gz
-Collecting wheel>=0.26 (from tensorflow==1.7.0rc1)
-  Downloading wheel-0.30.0-py2.py3-none-any.whl (49kB)
-Collecting grpcio>=1.8.6 (from tensorflow==1.7.0rc1)
-  Downloading grpcio-1.10.0-cp35-cp35m-linux_armv7l.whl (6.7MB)
-Collecting absl-py>=0.1.6 (from tensorflow==1.7.0rc1)
-  Downloading absl-py-0.1.12.tar.gz (79kB)
-Collecting numpy>=1.13.3 (from tensorflow==1.7.0rc1)
+Collecting tensorboard<1.8.0,>=1.7.0 (from tensorflow==1.7.0)
+  Downloading tensorboard-1.7.0-py3-none-any.whl (3.1MB)
+Collecting numpy>=1.13.3 (from tensorflow==1.7.0)
   Downloading numpy-1.14.2.zip (4.9MB)
-Collecting protobuf>=3.4.0 (from tensorflow==1.7.0rc1)
+Collecting grpcio>=1.8.6 (from tensorflow==1.7.0)
+  Downloading grpcio-1.10.1-cp35-cp35m-linux_armv7l.whl (6.9MB)
+Collecting protobuf>=3.4.0 (from tensorflow==1.7.0)
   Downloading protobuf-3.5.2.post1-py2.py3-none-any.whl (388kB)
-Collecting gast>=0.2.0 (from tensorflow==1.7.0rc1)
+Collecting astor>=0.6.0 (from tensorflow==1.7.0)
+  Downloading astor-0.6.2-py2.py3-none-any.whl
+Collecting wheel>=0.26 (from tensorflow==1.7.0)
+  Downloading wheel-0.31.0-py2.py3-none-any.whl (41kB)
+Collecting gast>=0.2.0 (from tensorflow==1.7.0)
   Downloading gast-0.2.0.tar.gz
-Collecting markdown>=2.6.8 (from tensorboard<1.7.0,>=1.6.0->tensorflow==1.7.0rc1)
+Requirement already satisfied: six>=1.10.0 in /usr/local/lib/python3.5/dist-packages (from tensorflow==1.7.0)
+Collecting markdown>=2.6.8 (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0)
   Downloading Markdown-2.6.11-py2.py3-none-any.whl (78kB)
-Collecting werkzeug>=0.11.10 (from tensorboard<1.7.0,>=1.6.0->tensorflow==1.7.0rc1)
+Collecting werkzeug>=0.11.10 (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0)
   Downloading Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)
-Collecting bleach==1.5.0 (from tensorboard<1.7.0,>=1.6.0->tensorflow==1.7.0rc1)
-  Downloading bleach-1.5.0-py2.py3-none-any.whl
-Collecting html5lib==0.9999999 (from tensorboard<1.7.0,>=1.6.0->tensorflow==1.7.0rc1)
+Collecting html5lib==0.9999999 (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0)
   Downloading html5lib-0.9999999.tar.gz (889kB)
-Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from protobuf>=3.4.0->tensorflow==1.7.0rc1)
-Installing collected packages: markdown, protobuf, numpy, werkzeug, html5lib, bleach, wheel, tensorboard, astor, termcolor, grpcio, absl-py, gast, tensorflow
+Collecting bleach==1.5.0 (from tensorboard<1.8.0,>=1.7.0->tensorflow==1.7.0)
+  Downloading bleach-1.5.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools in /usr/lib/python3/dist-packages (from protobuf>=3.4.0->tensorflow==1.7.0)
+Installing collected packages: absl-py, termcolor, markdown, numpy, werkzeug, protobuf, wheel, html5lib, bleach, tensorboard, grpcio, astor, gast, tensorflow
+  Running setup.py install for absl-py: started
+    Running setup.py install for absl-py: finished with status 'done'
+  Running setup.py install for termcolor: started
+    Running setup.py install for termcolor: finished with status 'done'
   Found existing installation: numpy 1.11.0
     Uninstalling numpy-1.11.0:
       Successfully uninstalled numpy-1.11.0
   Running setup.py install for numpy: started
-    Running setup.py install for numpy: still running...
-    Running setup.py install for numpy: still running...
     Running setup.py install for numpy: still running...
     Running setup.py install for numpy: still running...
     Running setup.py install for numpy: still running...
@@ -75,32 +76,28 @@ Installing collected packages: markdown, protobuf, numpy, werkzeug, html5lib, bl
   Found existing installation: bleach 2.1.2
     Uninstalling bleach-2.1.2:
       Successfully uninstalled bleach-2.1.2
-  Running setup.py install for termcolor: started
-    Running setup.py install for termcolor: finished with status 'done'
-  Running setup.py install for absl-py: started
-    Running setup.py install for absl-py: finished with status 'done'
   Running setup.py install for gast: started
     Running setup.py install for gast: finished with status 'done'
-Successfully installed absl-py-0.1.12 astor-0.6.2 bleach-1.5.0 gast-0.2.0 grpcio-1.10.0 html5lib-0.9999999 markdown-2.6.11 numpy-1.14.2 protobuf-3.5.2.post1 tensorboard-1.6.0 tensorflow-1.7.0rc1 termcolor-1.1.0 werkzeug-0.14.1 wheel-0.30.0
+Successfully installed absl-py-0.1.13 astor-0.6.2 bleach-1.5.0 gast-0.2.0 grpcio-1.10.1 html5lib-0.9999999 markdown-2.6.11 numpy-1.14.2 protobuf-3.5.2.post1 tensorboard-1.7.0 tensorflow-1.7.0 termcolor-1.1.0 werkzeug-0.14.1 wheel-0.31.0
 [91mYou are using pip version 9.0.1, however version 9.0.3 is available.
 You should consider upgrading via the 'pip install --upgrade pip' command.
-[0m ---> 21eeae0e20f8
-Removing intermediate container d19e98a63d6a
+[0m ---> 76380ff2b84a
+Removing intermediate container 6e6028f296ea
 Step 8/12 : COPY jupyter_notebook_config.py /root/.jupyter/
- ---> 5ed459f5697a
-Removing intermediate container 52941177146c
+ ---> 011503c3ff72
+Removing intermediate container 6305fea908b6
 Step 9/12 : COPY notebooks /notebooks
- ---> 1d25cbde10a3
-Removing intermediate container 82b4deeab231
+ ---> 34028bff2384
+Removing intermediate container 3ab488f9abe8
 Step 10/12 : EXPOSE 6006 8888
- ---> Running in eafe271d8d16
- ---> a47179472eb1
-Removing intermediate container eafe271d8d16
+ ---> Running in 179da5b4ef22
+ ---> de870d1eeed8
+Removing intermediate container 179da5b4ef22
 Step 11/12 : WORKDIR "/notebooks"
- ---> 583ea6f2f866
-Removing intermediate container 720c83d96285
+ ---> aa93b29c5f8c
+Removing intermediate container 929b306c7926
 Step 12/12 : CMD jupyter lab --ip=* --no-browser --allow-root
- ---> Running in 51fad4d93691
- ---> 6febf269f28f
-Removing intermediate container 51fad4d93691
-Successfully built 6febf269f28f
+ ---> Running in 8789f876e8ac
+ ---> 614f5932d6a6
+Removing intermediate container 8789f876e8ac
+Successfully built 614f5932d6a6
